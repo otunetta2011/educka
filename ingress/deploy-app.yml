@@ -22,9 +22,8 @@ spec:
       volumeMounts:
         - name: screeners-qa-local-coffee
           mountPath: "/var/run/secrets/kubernetes.io/serviceaccount"
-          readOnly: true
-      volumes:      
-      env:
+          readOnly: true     
+       env:
         - name: CONDUCO_CLIENT
           value: screeners
         - name: SECRETS_DIR
