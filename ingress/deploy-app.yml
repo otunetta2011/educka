@@ -18,7 +18,12 @@ spec:
           image: 547365428614.dkr.ecr.us-east-2.amazonaws.com/conduco-screeners
           ports: 
             - containerPort: 4000
-            
+      volumeMounts:
+        - name: screeners-qa-local-coffee
+          mountPath: "/var/run/secrets/kubernetes.io/serviceaccount"
+          readOnly: true
+      volumes:      
+     
 ---
 apiVersion: v1
 kind: Service
