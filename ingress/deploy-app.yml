@@ -23,27 +23,7 @@ spec:
         - name: screeners-qa-local-coffee
           mountPath: "/var/run/secrets/kubernetes.io/serviceaccount"
           readOnly: true     
-       env:
-        - name: CONDUCO_CLIENT
-          value: screeners
-        - name: SECRETS_DIR
-          value: /var/run/secrets/kubernetes.io/serviceaccount
-        - name: GET_HOSTS_FROM
-          value: dns
-        - name: AWS_REGION
-          value: us-east-1
-        - name: NODE_ENV
-          value: production
-        - name: AWS_ACCESS_KEY_ID
-          valueFrom:
-            secretKeyRef:
-              name: aws-credentials
-              key: access_key_id
-        - name: AWS_SECRET_ACCESS_KEY
-          valueFrom:
-            secretKeyRef:
-              name: aws-credentials
-              key: secret_access_key
+   
 ---
 apiVersion: v1
 kind: Service
